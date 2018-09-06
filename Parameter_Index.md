@@ -360,6 +360,30 @@
 |DARC[22]|DARC_RND_LTRANS_VER|滚道左半径垂直偏心
 |DARC[23]|DARC_RND_RTRANS_VER|滚道右半径垂直偏心
 
-
+|**摆动功能(OSCI)**||
+|OSCI[0]|起始进给深度
+|OSCI[1]|结束进给深度
+|OSCI[2]|磨削宽度
+|OSCI[3]|修光时间
+|OSCI[4]|进给率
+|OSCI[5]|横向进给率
+|OSCI[6]|重复调用的次数
+|OSCI[7]|进给轴（可选）或第 1 几何轴
+|OSCI[8]|往复轴（可选）或第 2 几何轴
+|OSCI[9]|
+|OSCI[10]|
+|OSCI[11]|
+|OSCI[12]|
+|OSCI[13]|
+|OSCI[14]|
+|OSCI[15]|
+|OSCI[16]|
+|OSCI[17]|
+|OSCI[18]|
+|OSCI[19]|
+|OSCI[20]|
+|OSCI[21]|
+|OSCI[22]|
+|OSCI[23]|
 
 
