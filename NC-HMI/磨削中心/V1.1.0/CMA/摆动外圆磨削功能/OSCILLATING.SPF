@@ -1,4 +1,4 @@
-PROC OSCILLATING DISPLOF
+PROC OSCILLATING DISPLON
 ;;**********程序功能**********
 ;磨削外圆(摆动循环CYCLE4071 ... CYCLE4079)V1.1.0
 ;;***************************
@@ -12,10 +12,44 @@ PROC OSCILLATING DISPLOF
 ;<S_A1>进给轴（可选）或第 1 几何轴
 ;<S_A2>往复轴（可选）或第 2 几何轴
 
+CASE OSCI[9] OF 1 GOTOF OSCILLATING_1 2 GOTOF OSCILLATING_2 3 GOTOF OSCILLATING_3 4 GOTOF OSCILLATING_4 5 GOTOF OSCILLATING_5 7 GOTOF OSCILLATING_7 8 GOTOF OSCILLATING_8 9 GOTOF OSCILLATING_9 DEFAULT GOTOF ERROR
 
+OSCILLATING_1:
 CYCLE4071(<S_A>, <S_B>, <S_W>, <S_U>, <S_I>, <S_K>, <S_H>,<S_A1>, <S_A2>)
+;反向点处带进给的纵向磨削
 
+OSCILLATING_2:
+CYCLE4072(<S_GAUGE>, <S_A>, <S_B>, <S_W>, <S_U>, <S_I>, <S_K>,<S_H>, <S_A1>, <S_A2>)
+;反向点处带进给的纵向磨削以及中断信号
 
+OSCILLATING_3:
+CYCLE4073(<S_A>, <S_B>, <S_W>, <S_U>, <S_K>, <S_H>, <S_A1>,<S_A2>)
+;带连续进给的纵向磨
+
+OSCILLATING_4:
+CYCLE4074(<S_GAUGE>, <S_A>, <S_B>, <S_W>, <S_U>, <S_K>, <S_H>,<S_A1>, <S_A2>)
+;带连续进给的纵向磨削以及中断信号
+
+OSCILLATING_5:
+CYCLE4075(<S_I>, <S_J>, <S_K>, <S_A>, <S_R>, <S_F>, <S_P>,<S_A1>, <S_A2>)
+;反向点处带进给的平面磨削
+
+OSCILLATING_7:
+CYCLE4077(<S_GAUGE>, <S_I>, <S_J>, <S_K>, <S_A>, <S_R>, <S_F>,<S_P>, <S_A1>, <S_A2>)
+;反向点处带进给的平面磨削以及中断信号
+
+OSCILLATING_8:
+CYCLE4078(<S_I>, <S_J>, <S_K>, <S_A>, <S_F>, <S_P>, <S_A1>,<S_A2>)
+;带连续进给的平面磨削
+
+OSCILLATING_9:
+CYCLE4079(<S_I>, <S_J>, <S_K>, <S_A>, <S_R>, <S_F>, <S_P>,<S_A1>, <S_A2>)
+;带间歇进给的平面磨削
+
+ERROR:
+MSG("外圆磨削,加工模式未正确选择")
+G4 F999999
+GOTOB ERROR
 
 
 
